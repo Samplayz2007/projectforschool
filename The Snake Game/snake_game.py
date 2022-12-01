@@ -1,22 +1,22 @@
 # Simple Snake Game
 # By @Samplayz2007
-
-import turtle
+#Importing Dependency
+import turtle 
 import time
 import random
 
-delay = 0.1
+delay = 0.1  #Set Delay
 
 # Score
-score = 0
-high_score = 0
+score = 0 #Initialize Variables for score 
+high_score = 0 #Initialize Variables for score 
 
 # Set up the screen
-wn = turtle.Screen()
-wn.title("Snake Game by @Samplayz2007")
-wn.bgcolor("green")
-wn.setup(width=600, height=600)
-wn.tracer(0) # Turns off the screen updates
+wn = turtle.Screen() 
+wn.title("Snake Game by @Samplayz2007") #Title Of Game Windows
+wn.bgcolor("green") #Background Colour
+wn.setup(width=600, height=600) #Screen Size
+wn.tracer(0) # Turns off the screen updates 
 
 # Snake head
 head = turtle.Turtle()
@@ -47,7 +47,7 @@ pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
 
-# Functions
+# Functions Used
 def go_up():
     if head.direction != "down":
         head.direction = "up"
