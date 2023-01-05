@@ -18,7 +18,7 @@ class Ui_jarvisUi(object):
         self.label = QtWidgets.QLabel(jarvisUi)
         self.label.setGeometry(QtCore.QRect(0, -10, 1731, 931))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../../jarvis/jarvis1.gif"))
+        self.label.setPixmap(QtGui.QPixmap("../.. /jarvis/jarvis1.gif"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(jarvisUi)
