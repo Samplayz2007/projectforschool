@@ -1,7 +1,7 @@
 from random import randint
 
 done=False
-
+print("Welcome To GameShop")
 class ShoppingCart:
 	def __init__(self):
 		self.items = []
