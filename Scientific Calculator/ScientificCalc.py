@@ -5,6 +5,7 @@ from math import *
 convert_constant = 1
 inverse_convert_constant = 1
 
+#Dimensions Of The GUI and the color
 btn_params = {
     'padx': 16,
     'pady': 1,
@@ -18,7 +19,7 @@ btn_params = {
     'activebackground': "#666666"
 }
 
-
+#Functions that have been Used for the Calculations
 def fsin(arg):
     return sin(arg * convert_constant)
 
@@ -44,7 +45,7 @@ def arctan(arg):
 
 
 class Calculator:
-    def __init__(self, master):
+    def __init__(self, master): #Gui Interface 
         # expression that will be displayed on screen
         self.expression = ""
         # be used to store data in memory
@@ -62,7 +63,7 @@ class Calculator:
         bottom_frame = tk.Frame(master, width=650, height=470, bd=4, relief='flat', bg='#666666')
         bottom_frame.pack(side=tk.BOTTOM)
         # name of calculator
-        my_item = tk.Label(top_frame, text="Simple Scientific Calculator",
+        my_item = tk.Label(top_frame, text="Scientific Calculator by Mrittika",
                            font=('arial', 14), fg='white', width=26, bg='#666666')
         my_item.pack()
         # entry interface for inputs
@@ -304,10 +305,10 @@ class Calculator:
         self.expression = self.sum_up
 
 
-# tkinter layout
+# tkinter main layout
 root = tk.Tk()
 b = Calculator(root)
-root.title("Simple Scientific Calculator By Sam")
+root.title("Simple Scientific Calculator By Mrittika")
 root.geometry("650x490+50+50")
 root.resizable(False, False)
 root.mainloop()
