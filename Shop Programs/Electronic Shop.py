@@ -28,7 +28,7 @@ class Item:
 		self.name = name
 		
 store = []
-itemNames = ["HDMI Cable", "Keyboard", "Headphones", "RAM"]
+itemNames = ["", "Keyboard", "Headphones", "RAM"]
 
 def makeStoreItems(amt):
 	storeItems = 0

@@ -16,6 +16,7 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
+
 #Menu
 print("Select operation.")
 print("1.Add")
