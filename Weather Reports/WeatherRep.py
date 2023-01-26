@@ -20,7 +20,7 @@ print ("\nToday's date: = %s/%s/%s" % (e.day, e.month, e.year))
      #Error Handling
 if weather_data.json()['cod'] == '404':
     print("\nNo City Found")
-#Print the weather
+#Print the weather after converting the recived values using requests
 else:
 
     weather = weather_data.json() ['weather'] [0] ['main'] 

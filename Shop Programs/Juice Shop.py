@@ -28,7 +28,7 @@ class Item:
 		self.name = name
 		
 store = []
-itemNames = ["HDMI Cable", "Keyboard", "Headphones", "RAM"]
+itemNames = ["Mango Juice", "Strawberry Juice", "Mojito", "Fig Juice", "Latte"]
 
 def makeStoreItems(amt):
 	storeItems = 0
@@ -43,8 +43,7 @@ def CreateStore(storefile):
 		str1 = ""
 		str1 = fx.read()
 	except IOError:
-		print("No Existing Store... generating items")
-		makeStoreItems(4)
+		makeStoreItems(5)
 
 def listStore():
 	iid = 0
