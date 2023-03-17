@@ -21,15 +21,16 @@ RED = (200,0,0)
 BLUE1 = (0, 0, 255)
 BLUE2 = (0, 100, 255)
 BLACK = (0,0,0)
-
+widths=int(input("Enter The Width of Screen:"))
+heights=int(input("Enter The Height of Screen:"))
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = int(input("Enter The Speed OF the Game:"))
 
 class SnakeGameAI:
 
-    def __init__(self, w=640, h=480):
-        self.w = w
-        self.h = h
+    def __init__(self, w=widths, h=heights):
+        self.w = widths
+        self.h = heights
         # init display
         self.display = pygame.display.set_mode((self.w, self.h))
         pygame.display.set_caption('Snake')
