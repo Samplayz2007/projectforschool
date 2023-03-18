@@ -1,15 +1,17 @@
-import pygame
+﻿import pygame
 from Constants import *
 from Menu import *
 from GameController import GameController
 from GA import *
 import sys
-
+pygame.init()
+font = pygame.font.SysFont('Arial', 36)
+name_surface = font.render("SamCORP™️", True, (255, 255, 255, 128))
+name_rect = name_surface.get_rect()
 
 class GameGUI:
     def __init__(self):
         pygame.init()
-
         self.clock = pygame.time.Clock()
         self.SCREEN_UPDATE = pygame.USEREVENT
 
@@ -28,11 +30,10 @@ class GameGUI:
         self.window = pygame.display.set_mode((self.SIZE, self.SIZE))
 
         self.font_name = 'SquareAntiqua-Bold.ttf'
-
         self.main_menu = MainMenu(self)
         self.GA = GAMenu(self, self.controller)
         self.curr_menu = self.main_menu
-
+        name_rect.bottomright = (self.SIZE - 10, self.SIZE - 10)
         self.load_model = False
         self.view_path = False
 
@@ -47,6 +48,7 @@ class GameGUI:
             if self.controller.algo != None:
                 self.draw_elements()
             self.window.blit(self.display, (0, 0))
+            self.window.blit(name_surface, name_rect)
 
             pygame.display.update()
             self.clock.tick(60)

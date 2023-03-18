@@ -71,7 +71,7 @@ class MainMenu(Menu):
             self.game.display.fill(WINDOW_COLOR)
 
             self.game.draw_text(
-                'Ai Snake Game', size=self.title_size,
+                'Choose AI Model.', size=self.title_size,
                 x=self.game.SIZE/2, y=self.game.SIZE/2 - 2*(CELL_SIZE + NO_OF_CELLS),
                 color=TITLE_COLOR
             )

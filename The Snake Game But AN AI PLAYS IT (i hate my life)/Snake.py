@@ -5,6 +5,16 @@ import pickle
 
 
 class Snake:
+    def hit_wall(self, screen_width, screen_height):
+        if self.body[0].x < 0 or self.body[0].x >= screen_width or self.body[0].y < 0 or self.body[0].y >= screen_height:
+            return True
+        return False
+
+    def hit_self(self):
+        for i in range(1, len(self.body)):
+            if self.body[0] == self.body[i]:
+                return True
+        return False
     def __init__(self, hidden=8):
         self.body = [Vector2(5, 8), Vector2(4, 8), Vector2(3, 8)]
         self.fruit = Fruit()
