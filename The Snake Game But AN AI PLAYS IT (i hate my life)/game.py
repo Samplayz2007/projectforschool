@@ -24,9 +24,9 @@ BLACK = (0,0,0)
 widths=int(input("Enter The Width of Screen:"))
 heights=int(input("Enter The Height of Screen:"))
 BLOCK_SIZE = 20
-
+speed = 20
 class SnakeGameAI:
-
+    
     def __init__(self, w=widths, h=heights):
         self.w = widths
         self.h = heights
@@ -35,6 +35,10 @@ class SnakeGameAI:
         pygame.display.set_caption('Snake')
         self.clock = pygame.time.Clock()
         self.reset()
+        # initialize slider
+        self.speed_slider = pygame.Rect(20, self.h + 10, 200, 30)
+        self.speed_slider_button = pygame.Rect(20 + speed * 2, self.h + 10, 10, 30)
+        self.dragging = False
 
 
     def reset(self):
@@ -61,17 +65,32 @@ class SnakeGameAI:
 
 
     def play_step(self, action):
+        global speed
         self.frame_iteration += 1
         # 1. collect user input
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        
+            # check for slider event
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                if self.speed_slider_button.collidepoint(event.pos):
+                    self.dragging = True
+            elif event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+                self.dragging = False
+            elif event.type == pygame.MOUSEMOTION and self.dragging:
+                x, y = event.pos
+                x = max(x, self.speed_slider.left)
+                x = min(x, self.speed_slider.right - self.speed_slider_button.width)
+                self.speed_slider_button.left = x
+                speed = (x - self.speed_slider.left) // 2 + 1
+
+        # update the game speed
+        self.clock.tick(speed)
+
         # 2. move
         self._move(action) # update the head
         self.snake.insert(0, self.head)
-        
         # 3. check if game over
         reward = 0
         game_over = False
@@ -91,6 +110,7 @@ class SnakeGameAI:
         # 5. update ui and clock
         self._update_ui()
         self.clock.tick(speed)
+        
         # 6. return game over and score
         return reward, game_over, self.score
 
