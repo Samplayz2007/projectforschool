@@ -1,8 +1,8 @@
-import pygame
 import random
 from enum import Enum
 from collections import namedtuple
 import numpy as np
+import pygame
 
 pygame.init()
 font = pygame.font.SysFont('arial', 25)
@@ -24,7 +24,6 @@ BLACK = (0,0,0)
 widths=int(input("Enter The Width of Screen:"))
 heights=int(input("Enter The Height of Screen:"))
 BLOCK_SIZE = 20
-SPEED = int(input("Enter The Speed OF the Game:"))
 
 class SnakeGameAI:
 
@@ -91,7 +90,7 @@ class SnakeGameAI:
         
         # 5. update ui and clock
         self._update_ui()
-        self.clock.tick(SPEED)
+        self.clock.tick(speed)
         # 6. return game over and score
         return reward, game_over, self.score
 
@@ -108,7 +107,6 @@ class SnakeGameAI:
 
         return False
 
-
     def _update_ui(self):
         self.display.fill(BLACK)
 
@@ -121,6 +119,9 @@ class SnakeGameAI:
         text = font.render("Score: " + str(self.score), True, WHITE)
         self.display.blit(text, [0, 0])
         pygame.display.flip()
+
+
+
 
 
     def _move(self, action):
