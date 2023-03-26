@@ -27,7 +27,7 @@ This is a Python program i made to explain about the basics of python in a simpl
 Completely Terminal based and doesnt use any extra modules other than ones included in python itself all instructions are the program and should be easy to understand
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [Python](https://www.python.ord) - Programming Language
+- [Python](https://www.python.org) - Programming Language
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@Samuel](https://github.com/Samplayz2007) 
