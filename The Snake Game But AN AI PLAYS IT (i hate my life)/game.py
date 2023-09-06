@@ -25,8 +25,6 @@ BLACK = (0,0,0)
 
 BLOCK_SIZE = 20
 SPEED = 40
-name_surface = font.render("SamCORP™️", True, (255, 255, 255, 128))
-name_rect = name_surface.get_rect()
 class SnakeGameAI:
 
     def __init__(self, w=640, h=480):
@@ -34,9 +32,7 @@ class SnakeGameAI:
         self.h = h
         # init display
         self.display = pygame.display.set_mode((self.w, self.h))
-        pygame.display.set_caption('SnakeAI By Sam')
         self.clock = pygame.time.Clock()
-        name_rect.bottomright = (self.SIZE - 10, self.SIZE - 10)
         self.reset()
 
 
@@ -120,7 +116,7 @@ class SnakeGameAI:
 
         pygame.draw.rect(self.display, RED, pygame.Rect(self.food.x, self.food.y, BLOCK_SIZE, BLOCK_SIZE))
 
-        text = font.render("Score: " + str(self.score), True, WHITE)
+        text = font.render("SamCORP "+"Score: " + str(self.score), True, WHITE)
         self.display.blit(text, [0, 0])
         pygame.display.flip()
 
